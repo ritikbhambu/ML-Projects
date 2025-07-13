@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Predict Insurance Charges</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e6f0ff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        form {
+            background: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: left;
+        }
+
+        label,
+        input {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Predict Charges</h1>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/predict">Predict</a>
+
+    <form method="POST">
+        <label>Age:</label>
+        <input type="text" name="age" required>
+
+        <label>Sex (0 = Female, 1 = Male):</label>
+        <input type="text" name="sex" required>
+
+        <label>BMI:</label>
+        <input type="text" name="bmi" required>
+
+        <label>Children:</label>
+        <input type="text" name="children" required>
+
+        <label>Smoker (0 = No, 1 = Yes):</label>
+        <input type="text" name="smoker" required>
+
+        <label>Region (0 to 3):</label>
+        <input type="text" name="region" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <p><strong>Predicted Charges:</strong> ${{ prediction | round(2) }}</p>
+    </div>
+    {% endif %}
+</body>
+
+</html>

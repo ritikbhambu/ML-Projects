@@ -1,0 +1,103 @@
+<!-- templates/check_quality.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Check Wine Quality</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            padding: 40px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Check Wine Quality</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About Us</a> |
+        <a href="/check">Check Quality</a>
+    </nav>
+    <form action="/predict" method="post">
+        <label>Fixed Acidity:
+            <input type="number" step="any" name="fixed_acidity" required>
+        </label>
+        <label>Volatile Acidity:
+            <input type="number" step="any" name="volatile_acidity" required>
+        </label>
+        <label>Citric Acid:
+            <input type="number" step="any" name="citric_acid" required>
+        </label>
+        <label>Chlorides:
+            <input type="number" step="any" name="chlorides" required>
+        </label>
+        <label>Total Sulfur Dioxide:
+            <input type="number" step="any" name="total_sulfur_dioxide" required>
+        </label>
+        <label>Sulphates:
+            <input type="number" step="any" name="sulphates" required>
+        </label>
+        <label>Alcohol:
+            <input type="number" step="any" name="alcohol" required>
+        </label>
+        <button type="submit">Predict Quality</button>
+    </form>
+</body>
+
+</html>

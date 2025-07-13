@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Laptop Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </nav>
+        <h1>Laptop Price Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="brand">Brand (0-4)</label>
+            <input type="number" name="brand" id="brand" min="0" max="4" required />
+
+            <label for="processor_1">Processor 1 (0-2)</label>
+            <input type="number" name="processor_1" id="processor_1" min="0" max="2" required />
+
+            <label for="processor_2">Processor 2 (0-3)</label>
+            <input type="number" name="processor_2" id="processor_2" min="0" max="3" required />
+
+            <label for="processor_3">Processor 3 (0-99)</label>
+            <input type="number" name="processor_3" id="processor_3" min="0" max="99" required />
+
+            <label for="ram_gb">RAM (GB)</label>
+            <input type="number" name="ram_gb" id="ram_gb" min="1" max="128" required />
+
+            <label for="ssd">SSD (GB)</label>
+            <input type="number" name="ssd" id="ssd" min="0" max="2048" required />
+
+            <label for="hdd">HDD (GB)</label>
+            <input type="number" name="hdd" id="hdd" min="0" max="2048" required />
+
+            <label for="graphic_card">Graphic Card (0-6)</label>
+            <input type="number" name="graphic_card" id="graphic_card" min="0" max="6" required />
+
+            <label for="warranty">Warranty (years)</label>
+            <input type="number" name="warranty" id="warranty" min="0" max="5" required />
+
+            <label for="Touchscreen">Touchscreen (0/1)</label>
+            <input type="number" name="Touchscreen" id="Touchscreen" min="0" max="1" required />
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+
+</html>
